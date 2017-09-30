@@ -24,7 +24,7 @@ body {
     width: 88%;
     margin-right: auto;
     margin-left: auto;
-    @include fontsize(14);
+    @include fontsize(12);
         
         @media(min-width: 550px) {
             .sp {
@@ -98,10 +98,13 @@ header {
     header #header_in  {
         
         text-align: center;
-        padding-top: 5px;
-        
+            
             .logo {
                 text-align: center;
+                h1.sp {
+                    margin-bottom: 3px;
+                }
+                
             }
 
             .pc_menu {
@@ -111,7 +114,16 @@ header {
             #sp_menu {
                 display: inline-block;
                 position: relative;
+                margin: 0;
+                
             }
+            .menu {
+                img {
+                    padding: 8px;
+                }
+            }
+            
+            
     }
     
     header #header_in ul li {
@@ -122,7 +134,6 @@ header {
         
     }
         
-    
         
     .sp_menu_toggle {
         position: absolute;
@@ -200,7 +211,12 @@ main {
     @media (max-width:550px) {
         
         #new_items {
-            text-align: center;        
+            text-align: center;
+            
+            img {
+                width: auto;
+                
+            }
             
             ul {
 
@@ -209,6 +225,7 @@ main {
                 flex-wrap: wrap;
                 justify-content: space-between;
                 
+                
                 li {
                     list-style: none;
                     width: calc( ( 100% - 2px) / 2);
@@ -216,6 +233,7 @@ main {
                     padding: 10px;
                     box-sizing: border-box;
                     margin-bottom: 2px;
+                    text-align: left;
     
                     img {
                         display: block;
@@ -250,6 +268,7 @@ main {
                 padding: 10px;
                 box-sizing: border-box;
                 margin-bottom: 2px;
+                
 
                 img {
                     display: block;
@@ -263,6 +282,10 @@ main {
         
         #popular_items {
             text-align: center; 
+            
+            img {
+                width: auto;
+            }
         
         
             ul {
@@ -279,6 +302,7 @@ main {
                     padding: 10px;
                     box-sizing: border-box;
                     margin-bottom: 2px;
+                    text-align: left;
     
                     img {
                         display: block;
@@ -294,8 +318,8 @@ main {
     #shopping_guide {
         
         img {
-            margin: 20px 0;
-            width: 100%;
+            margin: 10px 0;
+            
         }
 
         .guide {
@@ -309,32 +333,40 @@ main {
                 background-color: #ffffff;
                 width: calc( ( 100% - 2px) / 2);
                 box-sizing: border-box;
-                padding: 10px;
-
-                dl {
-                    color: $d_green;
-                    font-weight: bold;
-                    @include fontsize(15);
-                    letter-spacing: 0.2rem;
+                padding-left: 10px;
+                margin: 25px 0;
+                
+                    img {
+                        margin:0;
+                    }
                     
-
+                    h6 {
+                        color: $d_green;
+                        font-weight: bold;
+                        margin-top: 20px;
+                        
+                    }
                     dt {
-                        @include fontsize(15);
-                        font-weight: lighter;
+                        color: $d_green;
+                        font-weight: bold;
                         letter-spacing: 0;
+                        margin-bottom: 3px;
+                        
+                        
                         
                     }
 
                     dd {
                         font-weight: normal;
-                        @include fontsize(14);
+                        @include fontsize(12);
                         color: #000000;
                         margin-left: 0;
                         letter-spacing: 0;
+                        margin-bottom: 3px;
                         
 
                     }
-                }
+                
             } // .otodoke_box
         }
 
@@ -406,6 +438,11 @@ main {
                         border: none;
                         border-radius: 0;
                         width: 100%;
+                        
+                        placeholder {
+                            color: #b5b5b5;
+                            @include fontsize(11);
+                        }
                     }
                     .arrow {
                         position: absolute;
@@ -451,6 +488,7 @@ main {
         .shop_info {
             background-color: #ffffff;
             padding-bottom: 10px;
+            @include fontsize(12);
         }
 
         .shop_img,
@@ -465,13 +503,16 @@ main {
         }
         
         @media (max-width: 550px) {
-            .shop_img p,
-            .info_img p {
+            .sp_info {
             
                 float: right;
-                width: 50%;
-                display: block;
+                width: 48%;
                     
+            }
+            
+            .shop_img .u-max-full-width,
+            .info_img .u-max-full-width {
+                width: 48%;
             }
         }
         // @media max-width 550
@@ -493,11 +534,22 @@ footer {
     }
 
     hr {
-        border-top: 2px solid $d_green;
+        border-top: 1px solid $d_green;
     }
 
     .copy {
-        color: #e3e3e3;
+        color: #b8b4ac;
+    }
+    @media (max-width:550px) {
+        
+        text-align: center;
+        margin-bottom: 20px;
+        
+        img {
+            margin:  2px auto;
+            
+            
+        }
     }
 }
 
@@ -508,7 +560,11 @@ footer {
     
     background-color:$sub;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 3px;
+    
+    ol {
+        margin-bottom: 10px;
+    }
     
     li {
         list-style:none;
@@ -547,6 +603,7 @@ footer {
             padding: 10px;
             box-sizing: border-box;
             margin-bottom: 2px;
+            
 
             img {
                 display: block;
@@ -561,13 +618,19 @@ footer {
         flex-flow: row;
         justify-content: space-between;
         
+        
         a {
             background-color: $d_green;
             text-decoration: none;
             color: #ffffff;
-            width: 100px;
+            width: 121px;
+            height: 40px;
             text-align: center;
-            padding: 5px;
+            @include fontsize (14);
+            line-height: 40px;
+            
+            
+            
         }
     }
     // .control_btn
@@ -577,6 +640,7 @@ footer {
             flex-flow: row;
             flex-wrap: wrap;
             justify-content: space-between;
+            @include fontsize(10);
             
             li { 
                 width: calc( ( 100% - 2px) / 2);    
@@ -590,9 +654,12 @@ footer {
 
 #recent_pro {
     
+    text-align: center;
+    
     img {
         width: 100%;
         margin: 13px 0;
+        
     }
     .recent_list {
         display: flex;
@@ -607,16 +674,18 @@ footer {
             padding: 10px;
             box-sizing: border-box;
             margin-bottom: 2px;
+            text-align: left;
             
         }
     }
     
     @media (max-width: 550px) {
         
-        text-align: center;
+        
         
         img {
             width: auto;
+            
         }
         
        .recent_list {
@@ -624,9 +693,12 @@ footer {
             flex-flow: row;
             flex-wrap: wrap;
             justify-content: space-between;
+            text-aling: left;
+            @include fontsize(10);
         
             li {
                 width: calc( ( 100% - 5px) / 2);
+                
  
             }
         }
@@ -647,19 +719,22 @@ footer {
     
     .products_titl {
         
-        @include fontsize(16);
-        font-weight:bold;
+        @include fontsize(14);
         border-bottom: 2px solid $base;
         background-color: #ffffff;
         margin: auto;
         padding: 30px 0;
         width: 80%;
+        font-weight: bold;
         
         p { 
             text-align: right;
-            color: #e3e3e3;
+            color: #a6a6a6;
             float: right;
-            @include fontsize(14);
+            @include fontsize(10);
+            margin-top: 10px;
+            font-weight: normal;
+            
             
         }
         
@@ -707,10 +782,11 @@ footer {
             
             
             th {
-                background-color: $base;
+                background-color: #f9f9f5;
                 text-align: center;
                 border: 1px solid $sub;
                 width: 33.33333%;
+                @include fontsize(12);
                 
             }
             td {
@@ -726,11 +802,11 @@ footer {
         table {
             width: 100%;
             td {
-                font-weight: bold;
+                font-style: italic;
                 span {
-                    color: #9d1a2d;
-                    @include fontsize(24);
-                    font-style: italic;
+                    color: #e80f66;
+                    @include fontsize(22);
+                    
                 }
                 .qunatity_input {
                     border: 1px solid $sub;
@@ -744,22 +820,27 @@ footer {
     .table_03 {
         table {
             
-            font-weight: bold;
            
             th {
                 color: $d_green;
-                font-weight: bold;
+                
                 @include fontsize(16);
                 border-bottom: 0;
+                padding: 10px 0;
+                
                 
                 hr {
-                    border: 1px solid $d_green;
+                    border: 1px solid #e8e4da;
+                    margin: 10px 0;
+                    
                 }
             }   
             
     
             td {
                 border-bottom: 0;
+                @include fontsize(14);
+                padding: 10px 0;
             }
         }
     }
@@ -768,11 +849,14 @@ footer {
             color: $d_green;
             border: 1px solid $sub;
             width: 100%;
+            @include fontsize(12);
             
             th {
                 text-align: center;
                 border-right: 1px solid $sub;
                 width: 30%;
+                background-color: #f9f9f5;
+                
                 
                 
             }
@@ -786,14 +870,15 @@ footer {
     @media (max-width: 550px) {
         .products_titl {
             
-            padding: 15px;
-            @include fontsize(20);
+            padding: 10px;
+            width: 90%;
+            @include fontsize(14);
             
             p { 
                 
                 float: none;
                 text-align: left;
-                margin-top: 5px;
+                margin: 0px;
             }   
             
         }
@@ -801,7 +886,7 @@ footer {
         
         .products_ma {
         
-            width: 80%;
+            width: 90%;
             margin: 20px auto;
             line-height: 0;
         
@@ -832,6 +917,17 @@ footer {
                 }
             }
         }
+        .table_04 {
+            
+            padding: 0;
+            
+            
+            td.sp {
+                
+                padding: 12px;
+                text-align: left;
+            }
+        }
         .cart_img {
             text-align: center;
         }
@@ -847,10 +943,10 @@ footer {
     background: #9d1a2d;
 }
 .owl-theme .owl-dots .owl-dot span {
-    width: 20px;
-    height: 5px;
-    margin: 5px 7px;
-    background: #D6D6D6;
+    width: 25px;
+    height: 2px;
+    margin: 5px 5px;
+    background: #aaaaaa;
     display: block;
     -webkit-backface-visibility: visible;
     
@@ -859,4 +955,10 @@ footer {
 .owl-theme .owl-dots, .owl-theme .owl-nav {
     text-align: left;
      
+}
+
+.clearfix::after {
+    display: block;
+    content: '';
+    clear: both;
 }
