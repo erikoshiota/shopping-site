@@ -276,6 +276,8 @@ main #sidebar .more_btn {
   main #sidebar .sp_info {
     float: right;
     width: 48%; }
+    main #sidebar .sp_info p {
+      margin-bottom: 10px; }
   main #sidebar .shop_img .u-max-full-width,
   main #sidebar .info_img .u-max-full-width {
     width: 48%; } }
